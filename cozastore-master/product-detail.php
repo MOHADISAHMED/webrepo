@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include('component/header.php');
 if(isset($_GET['pid'])){
     $prostringid = $_GET['pid'];
@@ -30,11 +31,41 @@ if(isset($_GET['pid'])){
 			<?php echo $proData['productname']?>
 			</span>
 			
+=======
+   include("components/header.php");
+   if(isset($_GET["pid"])){
+     $pid = $_GET["pid"];
+	 $query = $pdo->prepare("SELECT `product`.*, `categories`.`CatName`
+	 FROM `product` 
+		 inner JOIN `categories` ON `product`.`productCatid` = `categories`.`Catid` where productid=:pid");
+		 $query->bindParam("pid",$pid);
+		 $query->execute();
+		 $proDetail=$query->Fetch(PDO::FETCH_ASSOC); 
+   }
+   ?>
+	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg m-t-60">
+			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+				<?php echo $proDetail['CatName']?> 
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+			<?php echo $proDetail['productName']?> 
+			</span>
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 		</div>
 	</div>
 		
 
 	<!-- Product Detail -->
+<<<<<<< HEAD
 	<section class="sec-product-detail bg0 p-t-65 p-b-60">
 		<div class="container">
 			<form action="shoping-cart" method="post">
@@ -42,6 +73,15 @@ if(isset($_GET['pid'])){
 			<input type="hidden" name="proName" value="<?php echo $proData['productname']?>">
 			<input type="hidden" name="proPrice" value="<?php echo $proData['productprice']?>">
 			<input type="hidden" name="proImage" value="<?php echo $proData['productimage']?>">
+=======
+	<section class="sec-product-detail bg0 p-t-65 p-b-60 ">
+		<div class="container">
+			<form action="shoping-cart.php" method= "post">
+			<input type="hidden" name="proId" value="<?php echo $proDetail['productid'] ?>">
+			<input type="hidden" name="proName" value="<?php echo $proDetail['productName'] ?>">
+			<input type="hidden" name="proPrice" value="<?php echo $proDetail['productPrice'] ?>">
+			<input type="hidden" name="proImage" value="<?php echo $proDetail['productImage'] ?>">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 			<div class="row">
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
@@ -50,31 +90,55 @@ if(isset($_GET['pid'])){
 							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 							<div class="slick3 gallery-lb">
+<<<<<<< HEAD
 								<div class="item-slick3" data-thumb="<?php echo $proref.$proData['productimage']?>">
 									<div class="wrap-pic-w pos-relative">
 									<img src="<?php echo $proref.$proData['productimage']?>" alt="">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proref.$proData['productimage']?>" alt="">
+=======
+								<div class="item-slick3" data-thumb="<?php echo $proImageRef.$proDetail['productImage']?>">
+									<div class="wrap-pic-w pos-relative">
+										<img src="<?php echo $proImageRef.$proDetail['productImage']?>" alt="IMG-PRODUCT">
+
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImageRef.$proDetail['productImage']?>">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
+<<<<<<< HEAD
 								<div class="item-slick3" data-thumb="<?php echo $proref.$proData['productimage']?>">
 									<div class="wrap-pic-w pos-relative">
 									<img src="<?php echo $proref.$proData['productimage']?>" alt="">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="images/product-detail-02.jpg">
+=======
+								<div class="item-slick3" data-thumb="<?php echo $proImageRef.$proDetail['productImage']?>">
+									<div class="wrap-pic-w pos-relative">
+										<img src="<?php echo $proImageRef.$proDetail['productImage']?>" alt="IMG-PRODUCT">
+
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImageRef.$proDetail['productImage']?>">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
 								</div>
 
+<<<<<<< HEAD
 								<div class="item-slick3" data-thumb="<?php echo $proref.$proData['productimage']?>">
 									<div class="wrap-pic-w pos-relative">
 									<img src="<?php echo $proref.$proData['productimage']?>" alt="">
 
 										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proref.$proData['productimage']?>">
+=======
+								<div class="item-slick3" data-thumb="<?php echo $proImageRef.$proDetail['productImage']?>">
+									<div class="wrap-pic-w pos-relative">
+										<img src="<?php echo $proImageRef.$proDetail['productImage']?>" alt="IMG-PRODUCT">
+
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImageRef.$proDetail['productImage']?>">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>
@@ -87,6 +151,7 @@ if(isset($_GET['pid'])){
 				<div class="col-md-6 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+<<<<<<< HEAD
 							<?php echo $proData['productname']?>
 						</h4>
 						<span class="mtext-106 cl2">
@@ -98,6 +163,20 @@ if(isset($_GET['pid'])){
 						</p>
 						
 <!-- 						
+=======
+						<?php echo $proDetail['productName']?> 
+						</h4>
+
+						<span class="mtext-106 cl2">
+						$<?php echo $proDetail['productPrice']?> 
+						</span>
+
+						<p class="stext-102 cl3 p-t-23">
+						<?php echo $proDetail['productDescription']?> 
+						</p>
+						
+						<!--  -->
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 						<div class="p-t-33">
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-203 flex-c-m respon6">
@@ -135,7 +214,11 @@ if(isset($_GET['pid'])){
 										<div class="dropDownSelect2"></div>
 									</div>
 								</div>
+<<<<<<< HEAD
 							</div> -->
+=======
+							</div>
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -151,13 +234,21 @@ if(isset($_GET['pid'])){
 										</div>
 									</div>
 
+<<<<<<< HEAD
 									<button type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" name="addtocart">
+=======
+									<button type = "submit" name="addToCart" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 										Add to cart
 									</button>
 								</div>
 							</div>	
 						</div>
+<<<<<<< HEAD
 						</form>
+=======
+
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 						<!--  -->
 						<div class="flex-w flex-m p-l-100 p-t-40 respon7">
 							<div class="flex-m bor9 p-r-10 m-r-11">
@@ -181,6 +272,10 @@ if(isset($_GET['pid'])){
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
+=======
+</form>
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 
 			<div class="bor10 m-t-50 p-t-43 p-b-40">
 				<!-- Tab01 -->
@@ -206,15 +301,23 @@ if(isset($_GET['pid'])){
 						<div class="tab-pane fade show active" id="description" role="tabpanel">
 							<div class="how-pos2 p-lr-15-md">
 								<p class="stext-102 cl6">
+<<<<<<< HEAD
 								<?php echo $proData['productdescription']?>
 
+=======
+									Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 								</p>
 							</div>
 						</div>
 
 						<!-- - -->
+<<<<<<< HEAD
 						
 						<!-- <div class="tab-pane fade" id="information" role="tabpanel">
+=======
+						<div class="tab-pane fade" id="information" role="tabpanel">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 							<div class="row">
 								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
 									<ul class="p-lr-28 p-lr-15-sm">
@@ -270,7 +373,11 @@ if(isset($_GET['pid'])){
 									</ul>
 								</div>
 							</div>
+<<<<<<< HEAD
 						</div> -->
+=======
+						</div>
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 
 						<!-- - -->
 						<div class="tab-pane fade" id="reviews" role="tabpanel">
@@ -365,21 +472,32 @@ if(isset($_GET['pid'])){
 			</span>
 
 			<span class="stext-107 cl6 p-lr-25">
+<<<<<<< HEAD
 				Categories: <?php echo $proData['catname']?>,<?php echo $proData['productname']?>
+=======
+				Categories: Jacket, Men
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 			</span>
 		</div>
 	</section>
 
 
+<<<<<<< HEAD
 
 			<!-- Related Products -->
 	<section class="sec-relate-product bg0 p-t-45 p-b-105">
 		<div class="container">	
+=======
+	<!-- Related Products -->
+	<section class="sec-relate-product bg0 p-t-45 p-b-105">
+		<div class="container">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 			<div class="p-b-45">
 				<h3 class="ltext-106 cl5 txt-center">
 					Related Products
 				</h3>
 			</div>
+<<<<<<< HEAD
 	
 		
 			<!-- Slide2 -->
@@ -400,11 +518,21 @@ if(isset($_GET['pid'])){
 						
 							foreach($proData as $values){
 							?>
+=======
+
+			<!-- Slide2 -->
+			<div class="wrap-slick2">
+				<div class="slick2">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
 						<!-- Block2 -->
 						<div class="block2">
 							<div class="block2-pic hov-img0">
+<<<<<<< HEAD
 							<img src="<?php echo $proref.$values['productimage']?>" alt="">
+=======
+								<img src="images/product-01.jpg" alt="IMG-PRODUCT">
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 
 								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 									Quick View
@@ -414,11 +542,19 @@ if(isset($_GET['pid'])){
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
 									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+<<<<<<< HEAD
 									<?php echo $values['productname']?>	
 									</a>
 
 									<span class="stext-105 cl3">
 									<?php echo $values['productprice']?>	
+=======
+										Esprit Ruffle Shirt
+									</a>
+
+									<span class="stext-105 cl3">
+										$16.64
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 									</span>
 								</div>
 
@@ -431,6 +567,7 @@ if(isset($_GET['pid'])){
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 				
 					</div>
 					<?php
@@ -444,4 +581,237 @@ if(isset($_GET['pid'])){
 	<?php
 }
 include('component/footer.php');
+=======
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-02.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Herschel supply
+									</a>
+
+									<span class="stext-105 cl3">
+										$35.31
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-03.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Only Check Trouser
+									</a>
+
+									<span class="stext-105 cl3">
+										$25.50
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-04.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Classic Trench Coat
+									</a>
+
+									<span class="stext-105 cl3">
+										$75.00
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-05.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Front Pocket Jumper
+									</a>
+
+									<span class="stext-105 cl3">
+										$34.75
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-06.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Vintage Inspired Classic 
+									</a>
+
+									<span class="stext-105 cl3">
+										$93.20
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-07.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Shirt in Stretch Cotton
+									</a>
+
+									<span class="stext-105 cl3">
+										$52.66
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-pic hov-img0">
+								<img src="images/product-08.jpg" alt="IMG-PRODUCT">
+
+								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+									Quick View
+								</a>
+							</div>
+
+							<div class="block2-txt flex-w flex-t p-t-14">
+								<div class="block2-txt-child1 flex-col-l ">
+									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+										Pieces Metallic Printed
+									</a>
+
+									<span class="stext-105 cl3">
+										$18.96
+									</span>
+								</div>
+
+								<div class="block2-txt-child2 flex-r p-t-3">
+									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+										<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+										<img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+<?php 
+include("components/footer.php");
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 ?>

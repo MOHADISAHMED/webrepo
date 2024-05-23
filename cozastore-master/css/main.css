@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 /*------------------------------------------------------------------
 Project:  
 Version:  
@@ -39,6 +43,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
+<<<<<<< HEAD
 .wrap-table-my-orders {
   border: 1px solid #b3b3b3;
 }
@@ -83,6 +88,8 @@ table.table-my-orders tr.table_head th {
 .account-listmenu .nav-account li.active a {
   background: #717fe0;color: #fff;
 }
+=======
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 @font-face {
   font-family: Poppins-Regular;
   src: url('../fonts/Poppins/Poppins-Regular.ttf'); 
@@ -1067,7 +1074,11 @@ table.table-my-orders tr.table_head th {
 
 /*---------------------------------------------*/
 .header-cart-item-txt {
+<<<<<<< HEAD
   width: calc(100% - 100px);
+=======
+  width: calc(100% - 80px);
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 }
 
 .header-cart-item-name {
@@ -3345,6 +3356,7 @@ input.num-product::-webkit-inner-spin-button {
 
   
 }
+<<<<<<< HEAD
 .wrap-table-my-orders {
   border: 1px solid #b3b3b3;
 }
@@ -3365,6 +3377,9 @@ table.table-my-orders {
 table.table-my-orders tr.table_head th {
   font-size: 18px;
 }
+=======
+
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
 
 /*//////////////////////////////////////////////////////////////////
 [ SSM ]*/
@@ -3392,4 +3407,8 @@ table.table-my-orders tr.table_head th {
     padding: 20px;
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e

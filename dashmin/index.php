@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include ("component/header.php");
 if (!$_SESSION['sessionEmail']) {
@@ -7,6 +8,24 @@ if ($_SESSION['sessionRole'] == "user") {
     echo "<script>location.assign('../cozastore-master/index.php')</script>";
 }
 ?>
+=======
+
+<?php
+    include ("component/header.php");
+    if(!$_SESSION['sessionEmail']){
+        echo "<script> alert('login first to see your account'); location.assign('../cozastore-master/login.php')</script>";           
+    }
+ if($_SESSION['sessionRole'] == "user"){
+            echo "<script>location.assign('../cozastore-master/index.php')</script>";
+        }
+        ?>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        
+
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -271,6 +290,14 @@ if ($_SESSION['sessionRole'] == "user") {
                 </div>
             </div>
             <!-- Widgets End -->
+<<<<<<< HEAD
 <?php
 include ("component/footer.php");
 ?>
+=======
+
+<?php
+    include ("component/footer.php");
+?>
+          
+>>>>>>> 700f3cd9ea2bb8a3c086ee8c7ad0b8654a6b338e
